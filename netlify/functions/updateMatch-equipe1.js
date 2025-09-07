@@ -12,13 +12,17 @@ if (!admin.apps.length) {
 const db = admin.firestore();
 
 exports.handler = async function(event, context) {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
   try {
-    const snapshot = await db.collection('players-equipe1').orderBy('id').get();
-    const players = snapshot.docs.map(doc => doc.data());
+    const { matchId, composition } = JSON.parse(event.body);
+    await db.collection('matches-equipe1').doc(matchId).update({ composition });
     
     return {
       statusCode: 200,
-      body: JSON.stringify(players),
+      body: JSON.stringify({ message: 'Match updated successfully' }),
     };
   } catch (error) {
     return { statusCode: 500, body: error.toString() };

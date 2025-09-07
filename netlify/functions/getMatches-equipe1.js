@@ -13,12 +13,12 @@ const db = admin.firestore();
 
 exports.handler = async function(event, context) {
   try {
-    const snapshot = await db.collection('players-equipe1').orderBy('id').get();
-    const players = snapshot.docs.map(doc => doc.data());
+    const snapshot = await db.collection('matches-equipe1').get();
+    const matches = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     
     return {
       statusCode: 200,
-      body: JSON.stringify(players),
+      body: JSON.stringify(matches),
     };
   } catch (error) {
     return { statusCode: 500, body: error.toString() };

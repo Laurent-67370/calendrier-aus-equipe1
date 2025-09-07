@@ -12,15 +12,23 @@ if (!admin.apps.length) {
 const db = admin.firestore();
 
 exports.handler = async function(event, context) {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
   try {
-    const snapshot = await db.collection('players-equipe1').orderBy('id').get();
-    const players = snapshot.docs.map(doc => doc.data());
+    const { matchId, score } = JSON.parse(event.body);
+    if (typeof score.alsatia !== 'number' || typeof score.opponent !== 'number') {
+        return { statusCode: 400, body: 'Invalid score format' };
+    }
+    await db.collection('matches-equipe1').doc(matchId).update({ score });
     
     return {
       statusCode: 200,
-      body: JSON.stringify(players),
+      body: JSON.stringify({ message: 'Score updated successfully' }),
     };
   } catch (error) {
+    console.error("Error updating score: ", error);
     return { statusCode: 500, body: error.toString() };
   }
 };
