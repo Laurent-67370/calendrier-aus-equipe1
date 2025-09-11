@@ -1,9 +1,11 @@
 const admin = require('firebase-admin');
 
-// ⚠️ ACTION REQUISE : MODIFIEZ CETTE LISTE AVEC LES VRAIS JOUEURS DE L'ÉQUIPE 1
+// MODIFICATION : L'effectif est maintenant de 11 joueurs
 const playersData = [ 
     { id: 1, name: 'Joueur A' }, { id: 2, name: 'Joueur B' }, { id: 3, name: 'Joueur C' }, 
-    { id: 4, name: 'Joueur D' }, { id: 5, name: 'Joueur E' }, { id: 6, name: 'Joueur F' }
+    { id: 4, name: 'Joueur D' }, { id: 5, name: 'Joueur E' }, { id: 6, name: 'Joueur F' },
+    { id: 7, name: 'Joueur G' }, { id: 8, name: 'Joueur H' }, { id: 9, name: 'Joueur I' },
+    { id: 10, name: 'Joueur J' }, { id: 11, name: 'Joueur K' }
 ];
 const getDefaultComposition = () => ({ available: [], unavailable: [], noresponse: playersData.map(p => p.id), selected: [] });
 const getDefaultScore = () => ({ alsatia: 0, opponent: 0 });
