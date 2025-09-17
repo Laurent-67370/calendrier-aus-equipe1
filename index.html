@@ -76,7 +76,7 @@
         .player-edit-list input { width: 100%; padding: 0.5rem; border: 2px solid var(--border-color); border-radius: 4px; background-color: var(--card-bg); color: var(--text-primary); }
     </style>
 </head>
-<body data-theme="dark"> <!-- Le thème par défaut est sombre pour correspondre au maillot -->
+<body data-theme="dark">
     <div class="offline-indicator" id="offlineIndicator">📵 Mode hors ligne</div>
 
     <div class="container">
@@ -129,7 +129,7 @@
         <div class="modal-header"><h3 id="helpModalTitle">💡 Guide d'utilisation</h3></div>
         <div class="modal-body help-modal-body">
             <div class="help-section"><h4>📅 Consulter les matchs</h4><p>Utilisez la barre de recherche et les filtres pour trouver rapidement un match.</p></div>
-            <div class="help-section"><h4>👥 Composer votre équipe</h4><p>Cliquez sur <code>👥 Gérer l'équipe</code> pour définir les disponibilités (✔️ / ❌ / ❔) et sélectionner les 4 joueurs de la rencontre.</p></div>
+            <div class="help-section"><h4>👥 Composer votre équipe</h4><p>Cliquez sur <code>👥 Gérer l'équipe</code> pour définir les disponibilités (✔️ / ❌ / ❔) et sélectionner les 6 joueurs de la rencontre.</p></div>
             <div class="help-section"><h4>📊 Saisir les scores</h4><p>Après un match, cliquez sur <code>📊 Saisir score</code> pour enregistrer le résultat final. Le score s'affichera sur la carte avec une couleur indiquant la victoire, le nul ou la défaite.</p></div>
             <div class="help-section"><h4>✏️ Modifier l'effectif</h4><p>Cliquez sur le bouton <code>✏️ Effectif</code> en haut de la page pour changer les noms des joueurs de l'équipe.</p></div>
             <div class="help-section"><h4>🌐 Données Partagées</h4><p>Les compositions d'équipe, les scores et la liste des joueurs sont sauvegardés en ligne. Toute modification faite par un utilisateur sera visible par tous les autres.</p></div>
@@ -141,7 +141,7 @@
     <div class="modal-backdrop" id="scoreModalBackdrop"></div>
     <div class="modal" id="scoreModal" role="dialog" aria-modal="true" aria-labelledby="scoreModalTitle">
         <div class="modal-header"><h3 id="scoreModalTitle">Saisir le score</h3><p id="scoreModalSubtitle"></p></div>
-        <div class="modal-body"><div class="score-inputs"><div><label id="alsatiaScoreLabel">ALSATIA 1</label><input type="number" id="alsatiaScoreInput" min="0" max="14"></div><span class="vs" style="font-size: 2rem;">-</span><div><label id="opponentScoreLabel">Adversaire</label><input type="number" id="opponentScoreInput" min="0" max="14"></div></div></div>
+        <div class="modal-body"><div class="score-inputs"><div><label id="alsatiaScoreLabel">ALSATIA 1</label><input type="number" id="alsatiaScoreInput" min="0" max="20"></div><span class="vs" style="font-size: 2rem;">-</span><div><label id="opponentScoreLabel">Adversaire</label><input type="number" id="opponentScoreInput" min="0" max="20"></div></div></div>
         <div class="modal-footer"><button type="button" class="action-btn" id="cancelScoreBtn" style="background: var(--text-secondary);">Annuler</button><button type="button" class="action-btn" id="saveScoreBtn">Sauvegarder</button></div>
     </div>
 
@@ -156,7 +156,8 @@
     (function() {
         'use strict';
         
-        const TEAM_SIZE = 4;
+        // --- MODIFICATION APPLIQUÉE ICI ---
+        const TEAM_SIZE = 6; // <-- Passé de 4 à 6
         let playersData = [];
         
         const getDefaultComposition = () => ({ available: [], unavailable: [], noresponse: playersData.map(p => p.id), selected: [] });
