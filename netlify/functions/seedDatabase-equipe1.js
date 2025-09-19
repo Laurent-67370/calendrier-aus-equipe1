@@ -1,12 +1,20 @@
 const admin = require('firebase-admin');
 
-// MODIFICATION : L'effectif est maintenant de 11 joueurs
+// --- LISTE MISE À JOUR AVEC VOS VRAIS JOUEURS + 1 NOUVEAU ---
 const playersData = [ 
-    { id: 1, name: 'Joueur A' }, { id: 2, name: 'Joueur B' }, { id: 3, name: 'Joueur C' }, 
-    { id: 4, name: 'Joueur D' }, { id: 5, name: 'Joueur E' }, { id: 6, name: 'Joueur F' },
-    { id: 7, name: 'Joueur G' }, { id: 8, name: 'Joueur H' }, { id: 9, name: 'Joueur I' },
-    { id: 10, name: 'Joueur J' }, { id: 11, name: 'Joueur K' },
-    { id: 12, name: 'Joueur K' }
+    { id: 1, name: 'ANGIONI Romain' }, 
+    { id: 2, name: 'BARRIER Baptiste' }, 
+    { id: 3, name: 'FABY Jérôme' }, 
+    { id: 4, name: 'GRENIER Vincent' }, 
+    { id: 5, name: 'HUTTARD Thomas' }, 
+    { id: 6, name: 'LALA Laurent' },
+    { id: 7, name: 'LALA Louis' }, 
+    { id: 8, name: 'LARDE Quentin' }, 
+    { id: 9, name: 'LEMOINE Steeve' },
+    { id: 10, name: 'MINNI Christophe' }, 
+    { id: 11, name: 'MINNI Léa' }, 
+    { id: 12, name: 'PUJOL Bastien' },
+    { id: 13, name: 'Nouveau Joueur' } // <-- 13ÈME JOUEUR AJOUTÉ ICI. Modifiez ce nom !
 ];
 const getDefaultComposition = () => ({ available: [], unavailable: [], noresponse: playersData.map(p => p.id), selected: [] });
 const getDefaultScore = () => ({ alsatia: 0, opponent: 0 });
