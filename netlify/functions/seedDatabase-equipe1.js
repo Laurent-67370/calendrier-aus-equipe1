@@ -26,7 +26,14 @@ const initialMatchesData = [
     { id: 'J4', journee: 4, homeTeam: 'DORLISHEIM SD 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2025-10-31', time: '20h00', venue: 'away', month: 'october', composition: getDefaultComposition(), score: getDefaultScore() },
     { id: 'J5', journee: 5, homeTeam: 'MARMOUTIER ST ETIENNE 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2025-11-21', time: '20h15', venue: 'away', month: 'november', composition: getDefaultComposition(), score: getDefaultScore() },
     { id: 'J6', journee: 6, homeTeam: 'SESSENHEIM FC 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2025-12-05', time: '20h15', venue: 'away', month: 'december', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J7', journee: 7, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'ROSSFELD UTL 1', date: '2025-12-18', time: '20h15', venue: 'home', month: 'december', composition: getDefaultComposition(), score: getDefaultScore() }
+    { id: 'J7', journee: 7, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'ROSSFELD UTL 1', date: '2025-12-18', time: '20h15', venue: 'home', month: 'december', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'J8', journee: 8, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'BARR TT 1', date: '2026-01-22', time: '20h15', venue: 'home', month: 'january', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'J9', journee: 9, homeTeam: 'SCHLEITHAL USEP 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-01-31', time: '15h', venue: 'away', month: 'january', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'J10', journee: 10, homeTeam: 'BEINHEIM CTT 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-02-10', time: '20h', venue: 'away', month: 'february', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'J11', journee: 11, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'DORLISHEIM SD 1', date: '2026-03-12', time: '20h15', venue: 'home', month: 'march', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'J12', journee: 12, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'MARMOUTIER ST ETIENNE 1', date: '2026-04-02', time: '20h15', venue: 'home', month: 'april', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'J13', journee: 13, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'SESSENHEIM FC 1', date: '2026-04-23', time: '20h15', venue: 'home', month: 'april', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'J14', journee: 14, homeTeam: 'ROSSFELD UTL 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-05-15', time: '20h', venue: 'away', month: 'may', composition: getDefaultComposition(), score: getDefaultScore() }
 ];
 
 if (!admin.apps.length) {
