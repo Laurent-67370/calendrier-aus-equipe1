@@ -51,11 +51,23 @@ exports.handler = async function(event, context) {
   try {
     const matchesCollection = db.collection('matches-equipe1');
     const matchesSnapshot = await matchesCollection.get();
-    if (matchesSnapshot.empty) {
-        const matchesBatch = db.batch();
-        initialMatchesData.forEach(match => {
+
+    // Récupérer les IDs des matchs existants
+    const existingMatchIds = new Set();
+    matchesSnapshot.forEach(doc => {
+        existingMatchIds.add(doc.id);
+    });
+
+    // Ajouter uniquement les matchs manquants
+    const matchesBatch = db.batch();
+    let addedMatchesCount = 0;
+    initialMatchesData.forEach(match => {
+        if (!existingMatchIds.has(match.id)) {
             matchesBatch.set(matchesCollection.doc(match.id), match);
-        });
+            addedMatchesCount++;
+        }
+    });
+    if (addedMatchesCount > 0) {
         await matchesBatch.commit();
     }
 
@@ -68,10 +80,13 @@ exports.handler = async function(event, context) {
         });
         await playersBatch.commit();
     }
-    
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Base de données pour l'équipe 1 initialisée ou déjà existante." }),
+      body: JSON.stringify({
+        message: `Base de données mise à jour. ${addedMatchesCount} nouveau(x) match(s) ajouté(s).`,
+        addedMatches: addedMatchesCount
+      }),
     };
   } catch (error) {
     console.error("Erreur lors de l'initialisation de la base : ", error);
