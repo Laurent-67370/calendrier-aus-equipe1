@@ -1,14 +1,14 @@
 const admin = require('firebase-admin');
 
 const rankingData = [
-    { rang: 1, equipe: 'ROSSFELD UTL 1', pointsResultat: 31, joues: 7, gagnes: 7, nuls: 0, perdus: 0, pointsJeuGagnes: 105, pointsJeuPerdus: 35, isOurTeam: false },
-    { rang: 2, equipe: 'DORLISHEIM SD 1', pointsResultat: 27, joues: 7, gagnes: 6, nuls: 0, perdus: 1, pointsJeuGagnes: 87, pointsJeuPerdus: 53, isOurTeam: false },
-    { rang: 3, equipe: 'SCHLEITHAL USEP 1', pointsResultat: 24, joues: 7, gagnes: 5, nuls: 0, perdus: 2, pointsJeuGagnes: 86, pointsJeuPerdus: 54, isOurTeam: false },
-    { rang: 4, equipe: 'SESSENHEIM FC 1', pointsResultat: 21, joues: 7, gagnes: 4, nuls: 0, perdus: 3, pointsJeuGagnes: 64, pointsJeuPerdus: 76, isOurTeam: false },
-    { rang: 5, equipe: 'MARMOUTIER ST ETIENNE 1', pointsResultat: 20, joues: 7, gagnes: 3, nuls: 0, perdus: 4, pointsJeuGagnes: 67, pointsJeuPerdus: 73, isOurTeam: false },
-    { rang: 6, equipe: 'BEINHEIM CTT 1', pointsResultat: 19, joues: 7, gagnes: 2, nuls: 0, perdus: 5, pointsJeuGagnes: 62, pointsJeuPerdus: 78, isOurTeam: false },
-    { rang: 7, equipe: 'ALSATIA UNITAS SCHILTIGHEIM 1', pointsResultat: 14, joues: 7, gagnes: 1, nuls: 0, perdus: 6, pointsJeuGagnes: 44, pointsJeuPerdus: 96, isOurTeam: true },
-    { rang: 8, equipe: 'BARR TT 1', pointsResultat: 12, joues: 7, gagnes: 0, nuls: 0, perdus: 7, pointsJeuGagnes: 45, pointsJeuPerdus: 95, isOurTeam: false }
+    { rang: 1, equipe: 'ROSSFELD UTL 1', pointsResultat: 37, joues: 9, gagnes: 8, nuls: 0, perdus: 1, pointsJeuGagnes: 126, pointsJeuPerdus: 54, isOurTeam: false },
+    { rang: 2, equipe: 'DORLISHEIM SD 1', pointsResultat: 35, joues: 9, gagnes: 8, nuls: 0, perdus: 1, pointsJeuGagnes: 109, pointsJeuPerdus: 70, isOurTeam: false },
+    { rang: 3, equipe: 'SCHLEITHAL USEP 1', pointsResultat: 31, joues: 9, gagnes: 6, nuls: 0, perdus: 3, pointsJeuGagnes: 110, pointsJeuPerdus: 70, isOurTeam: false },
+    { rang: 4, equipe: 'MARMOUTIER ST ETIENNE 1', pointsResultat: 27, joues: 9, gagnes: 4, nuls: 0, perdus: 5, pointsJeuGagnes: 92, pointsJeuPerdus: 87, isOurTeam: false },
+    { rang: 5, equipe: 'SESSENHEIM FC 1', pointsResultat: 26, joues: 9, gagnes: 5, nuls: 0, perdus: 4, pointsJeuGagnes: 80, pointsJeuPerdus: 100, isOurTeam: false },
+    { rang: 6, equipe: 'BEINHEIM CTT 1', pointsResultat: 23, joues: 9, gagnes: 2, nuls: 0, perdus: 7, pointsJeuGagnes: 79, pointsJeuPerdus: 101, isOurTeam: false },
+    { rang: 7, equipe: 'ALSATIA UNITAS SCHILTIGHEIM 1', pointsResultat: 19, joues: 9, gagnes: 2, nuls: 0, perdus: 7, pointsJeuGagnes: 60, pointsJeuPerdus: 120, isOurTeam: true },
+    { rang: 8, equipe: 'BARR TT 1', pointsResultat: 18, joues: 9, gagnes: 1, nuls: 0, perdus: 8, pointsJeuGagnes: 63, pointsJeuPerdus: 117, isOurTeam: false }
 ];
 
 if (!admin.apps.length) {
