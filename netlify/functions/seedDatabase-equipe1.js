@@ -20,20 +20,16 @@ const getDefaultComposition = () => ({ available: [], unavailable: [], norespons
 const getDefaultScore = () => ({ alsatia: 0, opponent: 0 });
 
 const initialMatchesData = [
-    { id: 'J1', journee: 1, homeTeam: 'BARR TT 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2025-09-19', time: '20h15', venue: 'away', month: 'september', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J2', journee: 2, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'SCHLEITHAL USEP 1', date: '2025-10-02', time: '20h15', venue: 'home', month: 'october', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J3', journee: 3, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'BEINHEIM CTT 1', date: '2025-10-16', time: '20h15', venue: 'home', month: 'october', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J4', journee: 4, homeTeam: 'DORLISHEIM SD 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2025-10-31', time: '20h00', venue: 'away', month: 'october', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J5', journee: 5, homeTeam: 'MARMOUTIER ST ETIENNE 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2025-11-21', time: '20h15', venue: 'away', month: 'november', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J6', journee: 6, homeTeam: 'SESSENHEIM FC 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2025-12-05', time: '20h15', venue: 'away', month: 'december', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J7', journee: 7, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'ROSSFELD UTL 1', date: '2025-12-18', time: '20h15', venue: 'home', month: 'december', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J8', journee: 8, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'BARR TT 1', date: '2026-01-22', time: '20h15', venue: 'home', month: 'january', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J9', journee: 9, homeTeam: 'SCHLEITHAL USEP 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-01-31', time: '15h', venue: 'away', month: 'january', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J10', journee: 10, homeTeam: 'BEINHEIM CTT 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-02-10', time: '20h', venue: 'away', month: 'february', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J11', journee: 11, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'DORLISHEIM SD 1', date: '2026-03-12', time: '20h15', venue: 'home', month: 'march', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J12', journee: 12, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'MARMOUTIER ST ETIENNE 1', date: '2026-04-02', time: '20h15', venue: 'home', month: 'april', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J13', journee: 13, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'SESSENHEIM FC 1', date: '2026-04-23', time: '20h15', venue: 'home', month: 'april', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'J14', journee: 14, homeTeam: 'ROSSFELD UTL 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-05-15', time: '20h', venue: 'away', month: 'may', composition: getDefaultComposition(), score: getDefaultScore() }
+    // Saison 2026-2027 — Prom. EXCELLENCE poule A, 1ère phase (J1-J7)
+    // Source : PDF A6R "Saison 2026-2027 - Calendrier de 1ère Phase" (impression du 25-08-2026)
+    // Les matchs 2025-2026 (J1-J14) restent en base mais portent season: '2025-2026'.
+    { id: 'N1', journee: 1, homeTeam: 'ENT. A.P.I.G./OSTWALD 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-09-11', time: '20h15', venue: 'away', month: 'september', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'N2', journee: 2, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'ZORN TT HOCHFELDEN 1', date: '2026-09-24', time: '20h15', venue: 'home', month: 'september', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'N3', journee: 3, homeTeam: 'MARIENTHAL CONCORDIA 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-10-09', time: '20h15', venue: 'away', month: 'october', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'N4', journee: 4, homeTeam: 'LA WANTZENAU ST PAUL 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-10-28', time: '20h', venue: 'away', month: 'october', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'N5', journee: 5, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'LEUTENHEIM CTT 1', date: '2026-11-12', time: '20h15', venue: 'home', month: 'november', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'N6', journee: 6, homeTeam: 'BETSCHDORF TT 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-11-27', time: '20h15', venue: 'away', month: 'november', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'N7', journee: 7, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'SCHLEITHAL USEP 2', date: '2026-12-17', time: '20h15', venue: 'home', month: 'december', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() }
 ];
 
 if (!admin.apps.length) {
@@ -51,6 +47,19 @@ exports.handler = async function(event, context) {
   try {
     const matchesCollection = db.collection('matches-equipe1');
     const matchesSnapshot = await matchesCollection.get();
+
+
+    // Migration saison : les anciens matchs (J1-J14, saison 2025-2026) n'ont pas de
+    // champ 'season' — on le rajoute pour que l'app puisse filtrer la saison en cours.
+    try {
+      const allSnapshot = await matchesCollection.get();
+      const tagBatch = db.batch();
+      let tagged = 0;
+      allSnapshot.forEach(doc => {
+        if (!doc.data().season) { tagBatch.update(doc.ref, { season: '2025-2026' }); tagged++; }
+      });
+      if (tagged > 0) { await tagBatch.commit(); console.log(`Migration saison : ${tagged} ancien(s) match(s) tagué(s) 2025-2026.`); }
+    } catch (e) { console.error('Tag anciens matchs:', e); }
 
     // Récupérer les IDs des matchs existants
     const existingMatchIds = new Set();

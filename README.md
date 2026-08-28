@@ -1,6 +1,6 @@
 # 🏓 Calendrier PWA - ALSATIA UNITAS SCHILTIGHEIM Équipe 1
 
-Bienvenue sur le projet de l'application PWA (Progressive Web App) pour la gestion du calendrier et de la composition de l'équipe 1 de l'AUS Schiltigheim pour la saison 2025-2026 (Excellence - Poule A).
+Bienvenue sur le projet de l'application PWA (Progressive Web App) pour la gestion du calendrier et de la composition de l'équipe 1 de l'AUS Schiltigheim pour la saison 2026-2027 (Excellence - Poule A).
 
 Cette application est conçue pour être simple, rapide et collaborative, permettant à tous les membres de l'équipe de consulter le calendrier, de gérer l'effectif, de saisir les scores et de voir la composition des équipes en temps réel.
 
