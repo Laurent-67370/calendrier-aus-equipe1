@@ -29,7 +29,19 @@ const initialMatchesData = [
     { id: 'N4', journee: 4, homeTeam: 'LA WANTZENAU ST PAUL 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-10-28', time: '20h', venue: 'away', month: 'october', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
     { id: 'N5', journee: 5, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'LEUTENHEIM CTT 1', date: '2026-11-12', time: '20h15', venue: 'home', month: 'november', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
     { id: 'N6', journee: 6, homeTeam: 'BETSCHDORF TT 1', awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2026-11-27', time: '20h15', venue: 'away', month: 'november', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
-    { id: 'N7', journee: 7, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'SCHLEITHAL USEP 2', date: '2026-12-17', time: '20h15', venue: 'home', month: 'december', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() }
+    { id: 'N7', journee: 7, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'SCHLEITHAL USEP 2', date: '2026-12-17', time: '20h15', venue: 'home', month: 'december', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+
+    // --- 2ème phase (RETOUR, J8-J14) — PDF AGR agr-tt67 Prom. Excellence poule A,
+    // ajoutée le 05-09-2026 (ids M8-M14 nouveaux ; le seed n'ajoute que les
+    // matchs manquants, idempotent). NB entente APIG/OSTWALD : à domicile à
+    // OSTWALD 20h cycle ALLER, à ILLKIRCH 20h15 cycle RETOUR (commentaire PDF) ---
+    { id: 'M8',  journee: 8,  homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'ENT. A.P.I.G./OSTWALD 1',   date: '2027-01-07', time: '20h15', venue: 'home', month: 'january',  season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'M9',  journee: 9,  homeTeam: 'ZORN TT HOCHFELDEN 1',          awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2027-01-29', time: '20h15', venue: 'away', month: 'january',  season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'M10', journee: 10, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'MARIENTHAL CONCORDIA 1',       date: '2027-02-11', time: '20h15', venue: 'home', month: 'february', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'M11', journee: 11, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'LA WANTZENAU ST PAUL 1',       date: '2027-02-18', time: '20h15', venue: 'home', month: 'february', season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'M12', journee: 12, homeTeam: 'LEUTENHEIM CTT 1',              awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2027-03-03', time: '20h',   venue: 'away', month: 'march',    season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'M13', journee: 13, homeTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', awayTeam: 'BETSCHDORF TT 1',              date: '2027-04-15', time: '20h15', venue: 'home', month: 'april',    season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() },
+    { id: 'M14', journee: 14, homeTeam: 'SCHLEITHAL USEP 2',             awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2027-04-30', time: '20h',   venue: 'away', month: 'april',    season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() }
 ];
 
 if (!admin.apps.length) {
