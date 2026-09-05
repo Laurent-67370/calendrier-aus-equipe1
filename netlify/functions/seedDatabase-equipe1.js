@@ -44,6 +44,14 @@ const initialMatchesData = [
     { id: 'M14', journee: 14, homeTeam: 'SCHLEITHAL USEP 2',             awayTeam: 'ALSATIA UNITAS SCHILTIGHEIM 1', date: '2027-04-30', time: '20h',   venue: 'away', month: 'april',    season: '2026-2027', composition: getDefaultComposition(), score: getDefaultScore() }
 ];
 
+// Corrections de la phase aller (PDF agrtt67 vs seed initial) : appliquées aux docs
+// EXISTANTS — ne touche que date/time, jamais composition/score. Idempotent.
+// N4 : le PDF du 05-09 affiche « Ven 09-10-2026 | 20 h » pour Marienthal/AUS 1
+// (le seed initial avait 20h15). Pattern identique au seed eq3.
+const matchCorrections = {
+  N3: { time: '20h' },
+};
+
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert({
@@ -91,6 +99,25 @@ exports.handler = async function(event, context) {
     if (addedMatchesCount > 0) {
         await matchesBatch.commit();
     }
+
+    // Corrections de la phase aller : met à jour date/time des matchs existants
+    // dont la valeur a changé dans le PDF (N3 : Ven 09-10 à 20 h, pas 20 h 15).
+    // Idempotent, n'écrase jamais composition/score.
+    try {
+      const corrBatch = db.batch();
+      let corrected = 0;
+      for (const [matchId, fix] of Object.entries(matchCorrections)) {
+        const ref = matchesCollection.doc(matchId);
+        const snap = await ref.get();
+        if (!snap.exists) continue;
+        const data = snap.data();
+        const updates = {};
+        if (fix.date && data.date !== fix.date) updates.date = fix.date;
+        if (fix.time && data.time !== fix.time) updates.time = fix.time;
+        if (Object.keys(updates).length > 0) { corrBatch.update(ref, updates); corrected++; }
+      }
+      if (corrected > 0) { await corrBatch.commit(); console.log(`Corrections phase aller : ${corrected} match(s) mis à jour.`); }
+    } catch (e) { console.error('Corrections phase aller:', e); }
 
     const playersCollection = db.collection('players-equipe1');
     const playersSnapshot = await playersCollection.get();
