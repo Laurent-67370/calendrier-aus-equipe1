@@ -12,6 +12,7 @@ Cette application est conçue pour être simple, rapide et collaborative, permet
     *   Indiquez les disponibilités de chaque joueur (Disponible, Indisponible, Pas de réponse).
     *   Composez l'équipe de 4 joueurs pour chaque rencontre.
 *   **📊 Saisie des Scores :** Enregistrez le résultat final de chaque match (Victoire, Nul, Défaite).
+*   **📄 Feuille de Match :** Photographiez (ou importez) la feuille de match après la rencontre : elle est compressée, enregistrée avec le match et consultable par tous.
 *   **📱 Progressive Web App (PWA) :** Installez l'application sur l'écran d'accueil de votre téléphone pour un accès rapide et une utilisation hors ligne.
 *   **🎨 Thème Sombre :** Basculez entre le mode clair et le mode sombre pour un meilleur confort visuel.
 *   **🔍 Filtres et Recherche :** Trouvez rapidement un match par mois, par lieu (domicile/extérieur) ou en recherchant un nom d'équipe ou de joueur.
@@ -24,6 +25,7 @@ L'application est accessible directement via son URL Netlify. Aucune installatio
 2.  **Modifier l'effectif :** Cliquez sur **"✏️ Effectif"** pour mettre à jour la liste des joueurs.
 3.  **Gérer une composition :** Cliquez sur **"👥 Gérer l'équipe"** sur un match pour définir les disponibilités et sélectionner les joueurs.
 4.  **Saisir un score :** Cliquez sur **"📊 Saisir score"** pour enregistrer le résultat du match.
+5.  **Joindre la feuille de match :** Cliquez sur **"📄 Feuille de match"** pour prendre ou importer une photo de la feuille (bouton **"📄 Voir la feuille"** ensuite pour la consulter ou la remplacer).
 
 ## 🛠️ Architecture Technique
 
@@ -33,6 +35,7 @@ Ce projet utilise une architecture Jamstack moderne, combinant plusieurs service
 *   **Hébergement :** Déployé sur **Netlify** pour une performance globale et des déploiements continus.
 *   **Backend (API) :** **Netlify Functions** (en Node.js) servent d'intermédiaire sécurisé entre l'application et la base de données.
 *   **Base de Données :** **Google Firebase Firestore** est utilisée pour stocker et synchroniser les compositions d'équipe, les scores et la liste des joueurs.
+*   **Feuilles de match :** les photos sont réduites dans le navigateur (JPEG < 850 Ko) puis stockées dans la collection `sheets-equipe1` via les fonctions `updateSheet-equipe1` (envoi / suppression) et `getSheet-equipe1` (lecture, image mise en cache par le navigateur). Le match porte les champs `hasSheet` et `sheetVersion`.
 
 ## 📦 Déploiement
 
