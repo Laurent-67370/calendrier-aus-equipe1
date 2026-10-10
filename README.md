@@ -12,6 +12,7 @@ Cette application est conçue pour être simple, rapide et collaborative, permet
     *   Indiquez les disponibilités de chaque joueur (Disponible, Indisponible, Pas de réponse).
     *   Composez l'équipe de 4 joueurs pour chaque rencontre.
 *   **📊 Saisie des Scores :** Enregistrez le résultat final de chaque match (Victoire, Nul, Défaite).
+*   **🏆 Classement :** Bouton **"🏆 Classement"** pour consulter le classement de la poule (l'équipe est mise en évidence).
 *   **📄 Feuille de Match :** Photographiez (ou importez) la feuille de match après la rencontre : elle est compressée, enregistrée avec le match et consultable par tous.
 *   **📱 Progressive Web App (PWA) :** Installez l'application sur l'écran d'accueil de votre téléphone pour un accès rapide et une utilisation hors ligne.
 *   **🎨 Thème Sombre :** Basculez entre le mode clair et le mode sombre pour un meilleur confort visuel.
@@ -67,6 +68,16 @@ Un script `seedDatabase-equipe1.js` est inclus pour remplir les collections `mat
 
 1.  Après le premier déploiement, visitez l'URL : `https://VOTRE-SITE-EQUIPE1.netlify.app/.netlify/functions/seedDatabase-equipe1`.
 2.  Une fois les données insérées, il est recommandé de supprimer ce fichier du projet et de redéployer.
+
+### Classement de la poule
+
+Le classement est stocké dans la collection Firestore `ranking-equipe1` et lu par la fonction `getRanking-equipe1` (triée par `rang`). Chaque ligne contient : `rang`, `equipe`, `pointsResultat`, `joues`, `gagnes`, `nuls`, `perdus`, `pointsJeuGagnes`, `pointsJeuPerdus` et `isOurTeam` (met l'équipe en évidence).
+
+Pour le mettre à jour (après chaque journée, d'après le classement publié par l'AGR) :
+
+1.  Modifiez le tableau `rankingData` dans `netlify/functions/seedRanking-equipe1.js`.
+2.  Poussez sur `main` et attendez le déploiement Netlify.
+3.  Visitez `https://VOTRE-SITE-EQUIPE1.netlify.app/.netlify/functions/seedRanking-equipe1` : l'ancien classement est remplacé par le nouveau.
 
 ---
 _Application développée pour faciliter l'organisation de l'équipe._
